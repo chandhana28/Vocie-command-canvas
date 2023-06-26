@@ -1,6 +1,6 @@
 x=0;
 y=0;
-draw_circle = "";
+draw_Circle = "";
 draw_rect = "";
 
 var SpeechRecognition = window.webkitSpeechRecognition;
@@ -18,12 +18,12 @@ recognition.onresult = function(event){
     var content = event.results[0][0].transcript;
 
     document.getElementById("status").innerHTML = "The Speech has been recognized as: " + content;
-    if(content =="circle")
+    if(content =="Circle")
     {
         x = Math.floor(Math.random() * 900);
         y = Math.floor(Math.random() * 600);
-        document.getElementById("status").innerHTML = "Started drawing circle ";
-        draw_circle = "set";
+        document.getElementById("status").innerHTML = "Started drawing Circle ";
+        draw_Circle = "set";
     }
     if(content =="rectangle")
     {
@@ -39,12 +39,12 @@ function setup(){
 }
 
 function draw(){
-    if(draw_circle == "set")
+    if(draw_Circle == "set")
     {
         radius = Math.floor(Math.random() * 100);
-        cricle(x,y,radius);
-        document.getElementById('status').innerHTML = "Circle is drawn. ";
-        draw_circle = "";
+        Circle(x,y,radius);
+        document.getElementById("status").innerHTML = "Circle is drawn. ";
+        draw_Circle = "";
     }
     if(draw_rect == "set")
     {
